@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    color: black;
+    max-width: 650px;  /* Made narrower */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.navbar {
+    position: sticky;  /* Changed from fixed to sticky */
+    top: 0;
+    background-color: white;
+    padding: 20px 0;  /* Removed horizontal padding */
+    z-index: 1000;
+    transition: transform 0.3s ease;  /* Smooth transition for scroll effect */
+}
+
+.nav-content {
+    max-width: 650px;  /* Match body width */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name {
+    font-size: 1.8rem;  /* Slightly smaller */
+    font-weight: 500;
+    color: black;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.3rem;  /* Slightly smaller */
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+.nav-links a svg {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover svg {
+    opacity: 0.7;
+}
+
+.content {
+    margin-top: 20px;  /* Reduced margin since navbar is sticky now */
+}
+
+.content p {
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Add this for scroll effect */
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .name {
+        font-size: 1.5rem;
+    }
+}
+
+.experience {
+    margin-top: 3rem;
+}
+
+.experience h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: black;
+}
+
+.experience-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;  /* Reduced from 0.75rem */
+}
+
+.experience-item {
+    text-decoration: none;  /* Remove underline from link */
+    color: inherit;  /* Maintain original text color */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.experience-item:hover {
+    transform: translateX(10px);
+}
+
+.company-logo {
+    width: 32px;  /* Reduced from 40px */
+    height: 32px;  /* Reduced from 40px */
+    object-fit: cover;
+    border-radius: 6px;  /* Reduced from 8px */
+    flex-shrink: 0;
+}
+
+.experience-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* Added to push date to the right */
+    gap: 0.75rem;
+}
+
+.experience-content .role {
+    color: #666;
+    font-weight: 300;
+    margin-left: 1rem;  /* Added spacing between company name and role */
+}
+
+.experience-content .date {
+    font-weight: 300;
+    color: #666;
+    margin-left: auto;  /* Pushes date to the right */
+}
+
+.experience-content .status {
+    background-color: #f0f0f0;
+    padding: 0.1rem 0.4rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    .experience-content {
+        flex-wrap: nowrap;  /* Changed from wrap */
+        white-space: normal;
+    }
+    
+    .experience-content .role {
+        font-size: 0.9rem;  /* Slightly smaller on mobile */
+    }
+    
+    .experience-content .date {
+        font-size: 0.9rem;  /* Slightly smaller on mobile */
+    }
+}
+
+.company-link {
+    display: flex;  /* Changed from text-decoration: none */
+    align-items: center;
+}
+
+.projects {
+    margin-top: 4rem;
+}
+
+.projects h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: black;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.project-card {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.project-card:nth-child(1) {
+    background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+}
+
+.project-card:nth-child(2) {
+    background: linear-gradient(135deg, #A8E6CF, #3D84A8);
+}
+
+.project-card:nth-child(3) {
+    background: linear-gradient(135deg, #FFD93D, #FF6B6B);
+}
+
+.project-card:nth-child(4) {
+    background: linear-gradient(135deg, #6C5B7B, #C06C84);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.project-content h3 {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-content p {
+    font-weight: 300;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.redirect-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    opacity: 0.8;
+}
+
+@media (max-width: 500px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
